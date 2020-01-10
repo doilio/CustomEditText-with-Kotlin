@@ -23,16 +23,16 @@ class EditTextWithClear @JvmOverloads constructor(
 
     init {
 
-        //TODO if clear(X) is clicked, clear text
-        //TODO if the text changes show/hide the clear button.
+        // if clear(X) is clicked, clear text
+        // if the text changes show/hide the clear button.
 
-        setOnTouchListener { v, event ->
+        setOnTouchListener { _, event ->
 
             if (compoundDrawablesRelative[2] != null) {
                 val clearButtonStart: Int // Used for LTR languages
                 val clearButtonEnd: Int // Used for RTL languages
                 var isClearButtonClicked = false
-                // TODO: Detect the touch in RTL or LTR layout direction.
+                // : Detect the touch in RTL or LTR layout direction.
                 if (layoutDirection == View.LAYOUT_DIRECTION_RTL) {
                     clearButtonEnd = clearButtonImage!!.intrinsicWidth + paddingStart
 
@@ -47,7 +47,7 @@ class EditTextWithClear @JvmOverloads constructor(
                     }
                 }
 
-                // TODO: Check for actions if the button is tapped.
+                // : Check for actions if the button is tapped.
                 if (isClearButtonClicked) {
                     if (event.action == MotionEvent.ACTION_DOWN) {
                         // Switch to black version of button
@@ -81,7 +81,6 @@ class EditTextWithClear @JvmOverloads constructor(
 
 
     }
-
 
     override fun onTextChanged(
         text: CharSequence?,
